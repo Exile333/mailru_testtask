@@ -205,7 +205,8 @@ async def run_cm(_, __):
     print('Server stopped')
     
 if __name__ == '__main__':
-    kv_server.run(host='127.0.0.1', \
-                  port=8080, \
+    kv_server.run(host='0.0.0.0', \
+                  port=80, \
+                  workers=4, \
                   log_config=log_params)
         
