@@ -1,0 +1,28 @@
+[2019-10-27 21:33:05 +0300] [28266] [INFO] Goin' Fast @ http://127.0.0.1:8080
+[2019-10-27 21:33:05 +0300] [28266] [INFO] Starting worker [28266]
+[2019-10-27 21:33:11 +0300] [28266] [ERROR] Exception occurred while handling uri: 'http://127.0.0.1:8080/kv/444'
+Traceback (most recent call last):
+  File "server.py", line 27, in check_exist
+    log.info(f'Searching for pair, key: "{kid}"')
+NameError: name 'log' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "server.py", line 154, in handle_with_id
+    retc, retval = await check_exist(kid)
+  File "server.py", line 37, in check_exist
+    key: "{kid}", details: "{be}"'
+NameError: name 'be' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/exile/anaconda3/lib/python3.7/site-packages/sanic/app.py", line 942, in handle_request
+    response = await response
+  File "server.py", line 166, in handle_with_id
+    errmsg = f'Exception was thrown while processing response, details: {be}'
+NameError: name 'be' is not defined
+[2019-10-27 21:33:11 +0300] - (sanic.access)[INFO][127.0.0.1:56378]: GET http://127.0.0.1:8080/kv/444  500 144
+[2019-10-27 21:33:16 +0300] [28266] [INFO] Stopping worker [28266]
+[2019-10-27 21:33:16 +0300] [28266] [INFO] Server Stopped
